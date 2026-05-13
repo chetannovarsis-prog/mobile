@@ -15,7 +15,13 @@ import {
   Heart,
   Play,
   Check,
-  Headphones
+  Headphones,
+  UserPlus,
+  CreditCard,
+  Search,
+  MessageCircle,
+  Mail,
+  Phone
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { cn } from '@/utils/cn';
@@ -35,6 +41,37 @@ const brandLogos = [
   { name: 'OnePlus', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/OnePlus_Logo.svg/1200px-OnePlus_Logo.svg.png' },
   { name: 'Xiaomi', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/1200px-Xiaomi_logo_%282021-%29.svg.png' },
   { name: 'Realme', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Realme_logo.svg/1200px-Realme_logo.svg.png' },
+];
+
+const steps = [
+  {
+    icon: UserPlus,
+    title: "Register Device",
+    desc: "Enter your device details and IMEI to get started.",
+    color: "text-blue-500",
+    bg: "bg-blue-500/10"
+  },
+  {
+    icon: CreditCard,
+    title: "Choose Plan",
+    desc: "Select a protection plan that fits your budget.",
+    color: "text-emerald-500",
+    bg: "bg-emerald-500/10"
+  },
+  {
+    icon: Zap,
+    title: "Instant Active",
+    desc: "Your protection starts the moment payment is done.",
+    color: "text-amber-500",
+    bg: "bg-amber-500/10"
+  },
+  {
+    icon: Wrench,
+    title: "Easy Claims",
+    desc: "File a claim and get your device repaired fast.",
+    color: "text-purple-500",
+    bg: "bg-purple-500/10"
+  }
 ];
 
 const benefits = [
@@ -156,9 +193,9 @@ export default function HomePage() {
                 <Link to="/login" className="px-10 py-5 bg-[#00A36C] text-white rounded-[1.5rem] font-black text-lg shadow-2xl shadow-emerald-600/30 hover:scale-105 transition-all flex items-center justify-center gap-3">
                   Protect My Device <ArrowRight className="w-6 h-6" />
                 </Link>
-                <button className="px-10 py-5 bg-white border border-[#E5E7EB] rounded-[1.5rem] font-black text-lg shadow-xl shadow-foreground/5 hover:bg-foreground/5 transition-all flex items-center justify-center gap-3 group">
+                <a href="#how-it-works" className="px-10 py-5 bg-white border border-[#E5E7EB] rounded-[1.5rem] font-black text-lg shadow-xl shadow-foreground/5 hover:bg-foreground/5 transition-all flex items-center justify-center gap-3 group">
                   How It Works <Play className="w-5 h-5 fill-current group-hover:scale-110 transition-transform" />
-                </button>
+                </a>
               </div>
             </motion.div>
 
@@ -178,7 +215,7 @@ export default function HomePage() {
                 />
               </div>
 
-              {/* Badges - Exact Positioning */}
+              {/* Badges */}
               <motion.div 
                 initial={{ x: 50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -232,7 +269,7 @@ export default function HomePage() {
             </motion.div>
           </div>
 
-          {/* Stats Bar - Exactly as Image */}
+          {/* Stats Bar */}
           <motion.div 
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -260,7 +297,7 @@ export default function HomePage() {
           {/* Trustlogos */}
           <div className="mt-24 text-center">
             <p className="text-[11px] font-black uppercase tracking-widest text-[#1A1F25]/30 mb-12">Trusted by 1.2M+ users across India</p>
-            <div className="flex flex-wrap justify-center items-center gap-16 grayscale opacity-20 hover:opacity-40 transition-opacity duration-500">
+            <div className="flex flex-wrap justify-center items-center gap-16 grayscale opacity-20">
               {brandLogos.map(logo => (
                 <img key={logo.name} src={logo.url} alt={logo.name} className="h-7 object-contain" />
               ))}
@@ -269,8 +306,43 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-32 px-6 bg-[#F8F9FA]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-24">
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">How It Works</h2>
+            <p className="text-foreground/50 text-xl font-medium max-w-2xl mx-auto">Get protected in 4 simple steps. No paperwork, no hidden costs.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+             {/* Connection Line */}
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-emerald-500/10 -translate-y-1/2 -z-0" />
+            
+            {steps.map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white border border-border p-10 rounded-[3rem] text-center relative z-10 hover:shadow-xl transition-all group"
+              >
+                <div className={cn("w-20 h-20 rounded-3xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform", step.bg, step.color)}>
+                  <step.icon className="w-10 h-10" />
+                </div>
+                <div className="absolute -top-4 -left-4 w-10 h-10 bg-[#1A1F25] text-white rounded-full flex items-center justify-center font-black text-sm">
+                  0{i + 1}
+                </div>
+                <h3 className="text-xl font-black mb-4">{step.title}</h3>
+                <p className="text-foreground/50 font-medium text-sm leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
-      <section id="benefits" className="py-32 px-6 bg-[#F8F9FA]">
+      <section id="benefits" className="py-32 px-6 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
             <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">Why Choose SecureMobile?</h2>
@@ -285,7 +357,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2 }}
-                className="bg-card border border-border p-10 rounded-[3rem] group hover:border-primary/50 transition-all shadow-lg hover:shadow-primary/5"
+                className="bg-card border border-border p-10 rounded-[3rem] group hover:border-emerald-500/50 transition-all shadow-lg hover:shadow-emerald-500/5"
               >
                 <div className={cn("w-16 h-16 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform", benefit.bg, benefit.color)}>
                   <benefit.icon className="w-8 h-8" />
@@ -299,7 +371,7 @@ export default function HomePage() {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-32 px-6">
+      <section id="pricing" className="py-32 px-6 bg-[#F8F9FA]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
             <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">Simple Pricing Plans</h2>
@@ -315,7 +387,7 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2 }}
                 className={cn(
-                  "bg-card border-2 p-12 rounded-[3.5rem] flex flex-col relative",
+                  "bg-white border-2 p-12 rounded-[3.5rem] flex flex-col relative",
                   plan.popular ? "border-emerald-500 shadow-2xl shadow-emerald-500/20 scale-105 z-10" : "border-border shadow-lg"
                 )}
               >
@@ -349,6 +421,71 @@ export default function HomePage() {
                 </Link>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Support Section */}
+      <section id="support" className="py-32 px-6 bg-[#FFFFFF]">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2 className="text-4xl md:text-6xl font-black mb-8 tracking-tight">Need Support?</h2>
+              <p className="text-foreground/50 text-xl font-medium mb-12 leading-relaxed">
+                Our team is available 24/7 to help you with your claims, device registration, or any questions about your plan.
+              </p>
+              
+              <div className="space-y-8">
+                <div className="flex items-center gap-6 p-6 bg-[#F8F9FA] rounded-[2rem] border border-border hover:border-emerald-500/30 transition-all">
+                  <div className="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-500">
+                    <Mail className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-lg">Email Support</h4>
+                    <p className="text-foreground/50 font-medium">support@securemobile.care</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-6 p-6 bg-[#F8F9FA] rounded-[2rem] border border-border hover:border-emerald-500/30 transition-all">
+                  <div className="w-16 h-16 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-500">
+                    <Phone className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-lg">Toll-Free Number</h4>
+                    <p className="text-foreground/50 font-medium">+1 (800) 555-0199</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-6 p-6 bg-[#F8F9FA] rounded-[2rem] border border-border hover:border-emerald-500/30 transition-all">
+                  <div className="w-16 h-16 bg-amber-500/10 rounded-2xl flex items-center justify-center text-amber-500">
+                    <MessageCircle className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h4 className="font-black text-lg">Live Chat</h4>
+                    <p className="text-foreground/50 font-medium">Available in your dashboard</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-[#1A1F25] text-white p-16 rounded-[4rem] relative overflow-hidden group shadow-2xl">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl -mr-32 -mt-32 group-hover:scale-150 transition-transform duration-1000" />
+              <h3 className="text-3xl font-black mb-8 relative z-10">Frequently Asked</h3>
+              <div className="space-y-6 relative z-10">
+                {[
+                  "Is my phone covered if I drop it in water?",
+                  "How many claims can I file in a year?",
+                  "What documents are needed for a claim?",
+                  "Can I transfer my plan to a new phone?"
+                ].map((q, i) => (
+                  <div key={i} className="p-6 bg-white/5 border border-white/10 rounded-2xl flex justify-between items-center group/item hover:bg-white/10 cursor-pointer transition-all">
+                    <span className="font-bold text-sm">{q}</span>
+                    <ArrowRight className="w-4 h-4 text-emerald-500 group-hover/item:translate-x-2 transition-transform" />
+                  </div>
+                ))}
+              </div>
+              <button className="w-full mt-10 py-5 bg-emerald-500 text-white rounded-2xl font-black text-lg hover:opacity-90 transition-all">
+                Visit Help Center
+              </button>
+            </div>
           </div>
         </div>
       </section>
