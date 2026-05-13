@@ -1,19 +1,17 @@
-import { Outlet, Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Shield, Menu, X, Sun, Moon } from 'lucide-react';
+import { Outlet, Link } from 'react-router-dom';
+import { Shield, Menu } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { cn } from '@/utils/cn';
 
 export default function PublicLayout() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { pathname } = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
 
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">

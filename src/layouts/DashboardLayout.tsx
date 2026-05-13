@@ -12,25 +12,28 @@ import {
   X,
   Bell,
   Search,
-  MessageCircle
+  MessageCircle,
+  Activity,
+  CreditCard
 } from 'lucide-react';
 import { useState } from 'react';
 import { useAppStore } from '@/store/useAppStore';
 import { cn } from '@/utils/cn';
 
-const menuItems = [
+const sidebarItems = [
   { label: 'Overview', icon: LayoutDashboard, path: '/dashboard' },
   { label: 'My Devices', icon: Smartphone, path: '/dashboard/devices' },
-  { label: 'My Claims', icon: FileText, path: '/dashboard/claims/track' },
-  { label: 'Payments', icon: IndianRupee, path: '/dashboard/payments' },
+  { label: 'Submit Claim', icon: FileText, path: '/dashboard/claims/new' },
+  { label: 'Track Claim', icon: Activity, path: '/dashboard/claims/track' },
+  { label: 'Payments', icon: CreditCard, path: '/dashboard/payments' },
   { label: 'Settings', icon: Settings, path: '/dashboard/settings' },
 ];
 
 export default function DashboardLayout() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const { pathname } = useLocation();
-  const user = useAppStore(state => state.user);
-  const logout = useAppStore(state => state.logout);
+  const user = useAppStore((state) => state.user);
+  const logout = useAppStore((state) => state.logout);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -58,7 +61,7 @@ export default function DashboardLayout() {
         </div>
 
         <nav className="flex-1 px-4 space-y-2">
-          {menuItems.map((item) => {
+          {sidebarItems.map((item) => {
             const isActive = pathname === item.path;
             return (
               <Link
