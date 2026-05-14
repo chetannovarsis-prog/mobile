@@ -34,13 +34,13 @@ const stats = [
 ];
 
 const brandLogos = [
-  { name: 'Oppo', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/OPPO_Logo.svg/1200px-OPPO_Logo.svg.png' },
-  { name: 'Vivo', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Vivo_logo.svg/1200px-Vivo_logo.svg.png' },
-  { name: 'Apple', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/800px-Apple_logo_black.svg.png' },
-  { name: 'Samsung', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1200px-Samsung_Logo.svg.png' },
-  { name: 'OnePlus', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/OnePlus_Logo.svg/1200px-OnePlus_Logo.svg.png' },
-  { name: 'Xiaomi', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/1200px-Xiaomi_logo_%282021-%29.svg.png' },
-  { name: 'Realme', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Realme_logo.svg/1200px-Realme_logo.svg.png' },
+  { name: 'Oppo', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/OPPO_LOGO_2019.svg/250px-OPPO_LOGO_2019.svg.png' },
+  { name: 'Vivo', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Vivo_logo_2019.svg/500px-Vivo_logo_2019.svg.png' },
+  { name: 'Apple', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Apple_logo_black.svg/250px-Apple_logo_black.svg.png' },
+  { name: 'Samsung', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Samsung_Galaxy_logo.svg/500px-Samsung_Galaxy_logo.svg.png' },
+  { name: 'OnePlus', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/OP_LU_Reg_1L_RGB_red_copy-01.svg/500px-OP_LU_Reg_1L_RGB_red_copy-01.svg.png' },
+  { name: 'Xiaomi', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Xiaomi_logo_%282021-%29.svg/330px-Xiaomi_logo_%282021-%29.svg.png' },
+  { name: 'Realme', url: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Realme_logo_SVG.svg/500px-Realme_logo_SVG.svg.png' },
 ];
 
 const steps = [
