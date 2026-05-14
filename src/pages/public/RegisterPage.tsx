@@ -81,7 +81,7 @@ export default function RegisterPage() {
             >
               <Shield className="w-8 h-8" />
             </motion.div>
-            <h1 className="text-3xl font-black mb-2">Join SecureMobile</h1>
+            <h1 className="text-3xl font-black mb-2">Join Mobi Service Plus</h1>
             <p className="text-foreground/50 font-medium text-sm tracking-tight">Create your protection account</p>
           </div>
 

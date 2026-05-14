@@ -25,7 +25,7 @@ export default function PublicLayout() {
               <Shield className="w-6 h-6 text-primary-foreground" />
             </div>
             <span className="text-xl font-bold tracking-tight">
-              SecureMobile<span className="text-primary">Care</span>
+              Mobi Service <span className="text-primary">Plus</span>
             </span>
           </Link>
 
@@ -59,7 +59,7 @@ export default function PublicLayout() {
                 <Shield className="w-6 h-6 text-primary-foreground" />
               </div>
               <span className="text-xl font-bold tracking-tight">
-                SecureMobile<span className="text-primary">Care</span>
+                Mobi Service <span className="text-primary">Plus</span>
               </span>
             </Link>
             <p className="text-foreground/60 leading-relaxed">
@@ -84,12 +84,12 @@ export default function PublicLayout() {
           </div>
           <div>
             <h4 className="font-bold mb-6">Contact</h4>
-            <p className="text-foreground/60 mb-2">support@securemobile.care</p>
+            <p className="text-foreground/60 mb-2">support@mobiserviceplus.care</p>
             <p className="text-foreground/60">+1 (555) 000-0000</p>
           </div>
         </div>
         <div className="max-w-7xl mx-auto pt-8 border-t border-border text-center text-foreground/40 text-xs">
-          © 2024 SecureMobile Care. All rights reserved.
+          © 2024 Mobi Service Plus Care. All rights reserved.
         </div>
       </footer>
     </div>

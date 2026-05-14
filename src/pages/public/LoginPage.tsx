@@ -95,7 +95,7 @@ export default function LoginPage() {
             >
               <Shield className="w-8 h-8" />
             </motion.div>
-            <h1 className="text-3xl font-black mb-2">SecureMobile</h1>
+            <h1 className="text-3xl font-black mb-2">Mobi Service Plus</h1>
             <p className="text-foreground/50 font-medium text-sm tracking-tight">Protect. Repair. Replace.</p>
           </div>
 
@@ -232,7 +232,7 @@ export default function LoginPage() {
                     <input
                       type="email"
                       required
-                      placeholder="admin@securemobile.care"
+                      placeholder="admin@MobiServicePlus.care"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       className="w-full bg-foreground/5 border border-border rounded-2xl py-4 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all font-bold text-sm"
@@ -273,7 +273,7 @@ export default function LoginPage() {
         
         {!showSuccess && (
           <p className="text-center mt-10 text-sm text-foreground/40 font-medium">
-            New to SecureMobile? <Link to="/register" className="text-primary font-black hover:underline">Create Account</Link>
+            New to Mobi Service Plus? <Link to="/register" className="text-primary font-black hover:underline">Create Account</Link>
           </p>
         )}
       </motion.div>

@@ -345,7 +345,7 @@ export default function HomePage() {
       <section id="benefits" className="py-32 px-6 bg-[#FFFFFF]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-24">
-            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">Why Choose SecureMobile?</h2>
+            <h2 className="text-4xl md:text-6xl font-black mb-6 tracking-tight">Why Choose Mobi Service Plus?</h2>
             <p className="text-foreground/50 text-xl font-medium max-w-2xl mx-auto">We've built the world's most advanced protection ecosystem for your expensive devices.</p>
           </div>
           
@@ -442,7 +442,7 @@ export default function HomePage() {
                   </div>
                   <div>
                     <h4 className="font-black text-lg">Email Support</h4>
-                    <p className="text-foreground/50 font-medium">support@securemobile.care</p>
+                    <p className="text-foreground/50 font-medium">support@mobiservice.plus</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-6 p-6 bg-[#F8F9FA] rounded-[2rem] border border-border hover:border-emerald-500/30 transition-all">
