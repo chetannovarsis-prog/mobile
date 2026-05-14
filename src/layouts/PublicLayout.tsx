@@ -21,10 +21,10 @@ export default function PublicLayout() {
       )}>
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="bg-primary p-2 rounded-xl group-hover:rotate-12 transition-transform">
-              <Shield className="w-6 h-6 text-primary-foreground" />
+            <div className="">
+              <img src="/logo.png" className='h-15' alt="" />
             </div>
-            <span className="text-xl font-bold tracking-tight">
+            <span className="text-xl font-bold tracking-tight flex gap-2">
               Mobi Service <span className="text-primary">Plus</span>
             </span>
           </Link>
@@ -55,8 +55,8 @@ export default function PublicLayout() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 text-sm">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <div className="bg-primary p-2 rounded-xl">
-                <Shield className="w-6 h-6 text-primary-foreground" />
+              <div >
+                <img src="/logo.png" className='h-15' alt="" />
               </div>
               <span className="text-xl font-bold tracking-tight">
                 Mobi Service <span className="text-primary">Plus</span>
